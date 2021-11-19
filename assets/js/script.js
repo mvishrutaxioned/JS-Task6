@@ -4,6 +4,8 @@ var checks = document.querySelectorAll('input[type="checkbox"]');
 var inputPass = document.querySelector('input[type="text"]');
 var copyBtn = document.querySelector('#copy');
 
+inputLength.value = 10;
+
 function submitForm(e) {
     inputPass.value = '';
     e.preventDefault();
