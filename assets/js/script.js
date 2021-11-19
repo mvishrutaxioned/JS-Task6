@@ -57,5 +57,57 @@ function generatePass(result) {
     trimLength(result, pass);
 }
 
+function trimLength(result, pass) {
+    var str = '';
+    var objLength = 0
+
+    for(var elem in result) {
+        if(result[elem] == true) {
+            objLength++
+        }
+    }
+
+    var length = inputLength.value;
+
+    if(result.upperCase == true) {
+        var newStr = (pass.match(/[A-Z]/g))
+        var trimTo = length / objLength;
+        var equation = newStr.length - (newStr.length-trimTo)
+        newStr = newStr.slice(0, equation)
+        str += newStr.join('')
+    }
+    if(result.lowerCase == true) {
+        var newStr = (pass.match(/[a-z]/g))
+        var trimTo = length / objLength;
+        var equation = newStr.length - (newStr.length-trimTo)
+        newStr = newStr.slice(0, equation)
+        str += newStr.join('')
+    }
+    if(result.numbers == true) {
+        var newStr = (pass.match(/[0-9]/g))
+        var trimTo = length / objLength;
+        var equation = newStr.length - (newStr.length-trimTo)
+        newStr = newStr.slice(0, equation)
+        str += newStr.join('')
+    }
+    if(result.symbols == true) {
+        var newStr = (pass.match(/[^A-Za-z0-9]/g))
+        var trimTo = length / objLength;
+        var equation = newStr.length - (newStr.length-trimTo)
+        newStr = newStr.slice(0, equation)
+        str += newStr.join('')
+    }
+
+    if(str.length < length) {
+        recheck(str, length, pass, result)
+    }
+
+    var shuffledStr = str.split('').sort(() => { 
+        return 0.5-Math.random()
+    }).join('');
+
+    inputPass.value = shuffledStr;
+}
+
 generateBtn.addEventListener('click', (e) => submitForm(e));
 copyBtn.addEventListener('click', (e) => copyPass(e))
