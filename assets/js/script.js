@@ -109,5 +109,27 @@ function trimLength(result, pass) {
     inputPass.value = shuffledStr;
 }
 
+function recheck(str, length, pass, result) {
+    var remain = parseInt(length) - str.length;
+    console.log(remain)
+    if(result.upperCase == true) {
+        var newPass = pass.match(/[A-Z]/g, '');
+        newPass = newPass.slice(0,remain);
+        str += newPass.join('')
+    } else if(result.lowerCase == true) {
+        var newPass = pass.match(/[a-z]/g, '');
+        newPass = newPass.slice(0,remain);
+        str += newPass.join('')
+    } else if(result.numbers == true) {
+        var newPass = pass.match(/[0-9]/g, '');
+        newPass = newPass.slice(0,remain);
+        str += newPass.join('')
+    } else {
+        var newPass = pass.match(/[^A-Za-z0-9]/g, '');
+        newPass = newPass.slice(0,remain);
+        str += newPass.join('')
+    }
+}
+
 generateBtn.addEventListener('click', (e) => submitForm(e));
 copyBtn.addEventListener('click', (e) => copyPass(e))
