@@ -137,16 +137,16 @@ main .wrapper {
 }
 
 h2 {
-  font-size: 20px;
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 form > div {
-  width: auto;
-  padding: 5px;
+  padding: 12px 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   background-color: #151537;
 }
 
@@ -158,9 +158,7 @@ form > div input {
   outline: none;
 }
 
-form ul {
-  padding: 10px 0;
-}
+form ul { padding: 10px 0; }
 
 form ul li {
   padding: 5px 0;
@@ -170,8 +168,10 @@ form ul li {
 }
 
 #copy  {
-  border: none;
   padding: 5px 10px;
+  border: none;
+  position: absolute;
+  right: 5px;
   background: #3B3B98;
   color: #fff;
   font-size: 18px;
@@ -180,13 +180,18 @@ form ul li {
 
 form > button {
   width: 100%;
-  border: none;
   padding: 10px;
+  border: none;
   background: #3B3B98;
   color: #fff;
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   outline: none;
+}
+
+form > button:hover, #copy:hover {
+  background-color: #5d5d98;
+  transition: .5s ease;
 }
 /*=================================
   main styling ends here
@@ -194,8 +199,21 @@ form > button {
 
 /*media query starts*/
 /*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
+@media only screen and (max-width: 1024px) {
+  .wrapper > div { width: 30%; }
+}
 
+/*media query for 768px starts here*/
+@media only screen and (max-width: 768px) {
+  .wrapper > div { width: 40%; }
+}
 
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+  .wrapper > div { width: 70%; }
+}
 
-}  
+/*media query for 320px starts here*/
+@media only screen and (max-width: 320px) {
+  .wrapper > div { width: 80%; }
+}
