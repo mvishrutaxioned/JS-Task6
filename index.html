@@ -2,7 +2,7 @@
 <html lang="en"> 
   <head>
     <meta charset="utf-8">
-    <title>Client</title>
+    <title>JS-Task6</title>
     <meta name="description" lang="en" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="favicon.ico" />
@@ -12,19 +12,57 @@
   <body>
     <!--container start-->
     <div class="container">
-      <!--header section start-->
-      <header>
-      </header>
-      <!--header section ends-->
       <!--main section start-->
       <main>
+        <div class="wrapper">
+          <div>
+            <h2>Password Generator</h2>
+            <form action="#FIXME" id="generatePass">
+              <div>
+                <input type="text" name="password" id="password">
+                <button id="copy"><i class="far fa-clipboard"></i></button>
+              </div>
+              <ul>
+                <li>
+                  <p>Password Length</p>
+                  <div>
+                    <input required type="number" name="length" id="length" min="8" max="20">
+                  </div>
+                </li>
+                <li>
+                  <p>Include uppercase letters</p>
+                  <div>
+                    <input type="checkbox" name="upperCase" id="upperCase">
+                  </div>
+                </li>
+                <li>
+                  <p>Include lowercase letters</p>
+                  <div>
+                    <input type="checkbox" name="lowerCase" id="lowerCase">
+                  </div>
+                </li>
+                <li>
+                  <p>Include Numbers</p>
+                  <div>
+                    <input type="checkbox" name="lowerCase" id="lowerCase">
+                  </div>
+                </li>
+                <li>
+                  <p>Include Symbols</p>
+                  <div>
+                    <input type="checkbox" name="symbols" id="symbols">
+                  </div>
+                </li>
+              </ul>
+              <button type="submit" title="Generate Password">Generate Password</button>
+            </form>
+          </div>
+        </div>
       </main>
       <!--main section end-->
-      <!--footer section start-->
-      <footer>      
-      </footer>
-      <!--footer section end-->
     </div>
     <!--container end-->
+
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
