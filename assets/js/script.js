@@ -37,5 +37,25 @@ function submitForm(e) {
     generatePass(result);
 }
 
+function generatePass(result) {
+
+    var pass = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrtuvwxyz1234567890!@#$%^&*()-_+=/\|?><":;}{][`~';
+
+    if(result.upperCase == false) {
+        pass = pass.replace(/[A-Z]/g, '' );
+    }
+    if(result.lowerCase == false) {
+        pass = pass.replace(/[a-z]/g, '' );
+    }
+    if(result.numbers == false) {
+        pass = pass.replace(/[0-9]/g, '' );
+    }
+    if(result.symbols == false) {
+        pass = pass.replace(/[^A-Za-z0-9]/g, '' );
+    }
+
+    trimLength(result, pass);
+}
+
 generateBtn.addEventListener('click', (e) => submitForm(e));
 copyBtn.addEventListener('click', (e) => copyPass(e))
