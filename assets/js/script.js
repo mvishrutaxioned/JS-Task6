@@ -131,5 +131,15 @@ function recheck(str, length, pass, result) {
     }
 }
 
+function copyPass(e) {
+    e.preventDefault();
+
+  inputPass.select();
+  inputPass.setSelectionRange(0, 99999);
+
+  navigator.clipboard.writeText(inputPass.value);
+  alert('Password Copied');
+}
+
 generateBtn.addEventListener('click', (e) => submitForm(e));
 copyBtn.addEventListener('click', (e) => copyPass(e))
