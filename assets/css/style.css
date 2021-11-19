@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -108,47 +109,88 @@ li {
   width: 86%; 
   margin: 0 auto;
 }
-/*=================================
-  Header styling starts here
-=================================*/
-
-
-
-
-
-
-/*=================================
-  Header styling ends here
-=================================*/  
 
 /*=================================
   main styling starts here
 =================================*/
 
+main .wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #3B3B98;
+}
 
+.wrapper > div {
+  width: 20%;
+  padding: 25px 20px 20px 20px;
+  background-color: #23235B;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
 
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 
+form > div {
+  width: auto;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #151537;
+}
 
+form > div input {
+  border: none;
+  background: #151537;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
 
+form ul {
+  padding: 10px 0;
+}
 
+form ul li {
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
 
+#copy  {
+  border: none;
+  padding: 5px 10px;
+  background: #3B3B98;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+
+form > button {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  background: #3B3B98;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
 /*=================================
   main styling ends here
 =================================*/
-
-/*=================================
-  footer styling starts here
-=================================*/ 
-
-
-
-
-
-
-
- /*=================================
-  footer styling ends here
-=================================*/ 
 
 /*media query starts*/
 /*media query for 995px starts here*/
