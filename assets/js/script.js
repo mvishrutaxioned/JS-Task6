@@ -4,6 +4,8 @@ var checks = document.querySelectorAll('input[type="checkbox"]');
 var inputPass = document.querySelector('input[type="text"]');
 var copyBtn = document.querySelector('#copy');
 
+inputLength.value = 10;
+
 function submitForm(e) {
     inputPass.value = '';
     e.preventDefault();
@@ -101,17 +103,11 @@ function trimLength(result, pass) {
     if(str.length < length) {
         recheck(str, length, pass, result)
     }
-
-    var shuffledStr = str.split('').sort(() => { 
-        return 0.5-Math.random()
-    }).join('');
-
-    inputPass.value = shuffledStr;
 }
 
 function recheck(str, length, pass, result) {
-    var remain = parseInt(length) - str.length;
-    console.log(remain)
+    var remain = parseInt(length) - parseInt(str.length);
+
     if(result.upperCase == true) {
         var newPass = pass.match(/[A-Z]/g, '');
         newPass = newPass.slice(0,remain);
@@ -129,6 +125,11 @@ function recheck(str, length, pass, result) {
         newPass = newPass.slice(0,remain);
         str += newPass.join('')
     }
+
+    var shuffledStr = str.split('').sort(() => { 
+        return 0.5-Math.random()
+    }).join('');
+    inputPass.value = shuffledStr;
 }
 
 function copyPass(e) {
